@@ -269,7 +269,7 @@ class FaceSwapping(VideoProcessBase):
         appearance_map = AppearanceMapDataset(src_vid_seq_path, tgt_vid_seq_path, src_transform, tgt_transform,
                                               self.landmarks_postfix, self.pose_postfix, self.segmentation_postfix,
                                               self.min_radius)
-        appearance_map_loader = DataLoader(appearance_map, batch_size=self.batch_size, num_workers=1, pin_memory=True,
+        appearance_map_loader = DataLoader(appearance_map, batch_size=self.batch_size, num_workers=0, pin_memory=True,
                                            drop_last=False, shuffle=False)
 
         # Initialize video writer
